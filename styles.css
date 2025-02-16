@@ -1,0 +1,199 @@
+:root {
+    /* Colores */
+    --color-primary: #6C5CE7; /* Morado vibrante */
+    --color-primary-hover: #5a4acf; /* Morado más oscuro */
+    --color-secondary: #00B894; /* Verde brillante */
+    --color-secondary-hover: #00a382; /* Verde más oscuro */
+    --color-background: #6C5CE7; /* Fondo violeta */
+    --color-surface: #FFFFFF; /* Fondo de superficie blanco */
+    --color-surface-secondary: #F3E5F5; /* Fondo secundario (violeta claro) */
+    --color-text: #2D3436; /* Texto oscuro */
+    --color-error: #FF7675; /* Rojo suave */
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-background); /* Fondo violeta */
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-large);
+    background-color: var(--color-surface); /* Fondo blanco */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+}
+
+h1 {
+    text-align: center;
+    color: var(--color-primary); /* Morado vibrante */
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-large);
+}
+
+/* Sección de fecha de nacimiento */
+.birthdate-section {
+    margin-bottom: var(--spacing-large);
+}
+
+.birthdate-section input {
+    padding: var(--spacing-small);
+    font-size: var(--font-size-medium);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--border-radius-small);
+    background-color: var(--color-surface-secondary); /* Fondo violeta claro */
+    color: var(--color-text);
+    width: 100%;
+    max-width: 300px;
+    transition: border-color 0.3s ease;
+}
+
+.birthdate-section input:focus {
+    border-color: var(--color-primary-hover);
+    outline: none;
+}
+
+/* Botones */
+.actions {
+    margin-bottom: var(--spacing-large);
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-small);
+    flex-wrap: wrap;
+}
+
+.actions button {
+    padding: var(--spacing-small) var(--spacing-medium);
+    font-size: var(--font-size-medium);
+    cursor: pointer;
+    border: none;
+    border-radius: var(--border-radius-small);
+    background-color: var(--color-primary); /* Morado vibrante */
+    color: var(--color-surface); /* Texto blanco */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.actions button:hover {
+    background-color: var(--color-primary-hover); /* Morado más oscuro */
+    transform: translateY(-2px);
+}
+
+.actions button:active {
+    transform: translateY(0);
+}
+
+/* Mensajes de error */
+.error-message {
+    color: var(--color-error);
+    font-size: var(--font-size-small);
+    text-align: center;
+    margin-top: var(--spacing-small);
+}
+
+/* Grid de cartas */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-large);
+    margin-top: var(--spacing-large);
+}
+
+.card {
+    background-color: var(--color-surface-secondary); /* Fondo violeta claro */
+    padding: var(--spacing-medium);
+    text-align: center;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(108, 92, 231, 0.7);
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-small);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--color-surface); /* Fondo blanco */
+    padding: var(--spacing-large);
+    border-radius: var(--border-radius);
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    color: var(--color-text);
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: var(--spacing-small);
+    right: var(--spacing-small);
+    font-size: var(--font-size-large);
+    cursor: pointer;
+    color: var(--color-primary); /* Morado vibrante */
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--color-primary-hover); /* Morado más oscuro */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .modal-content {
+        padding: var(--spacing-medium);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .birthdate-section input {
+        max-width: 100%;
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .actions button {
+        width: 100%;
+        max-width: 200px;
+    }
+}

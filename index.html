@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Tarot Balbi Feng Shui</h1>
+    
+    <!-- Sección de fecha de nacimiento -->
+    <div class="birthdate-section">
+        <h2>Ingresa tu fecha de nacimiento</h2>
+        <input type="date" id="birthdate" required>
+        <p id="date-error" class="error-message"></p>
+    </div>
+
+    <!-- Botones de acciones -->
+    <div class="actions">
+        <button onclick="drawCards()">Realizar Tirada</button>
+        <button onclick="resetCards()">Reiniciar</button>
+        <button onclick="saveReading()">Guardar Tirada</button>
+        <button onclick="loadReading()">Cargar Tirada</button>
+    </div>
+
+    <!-- Resultado del camino de vida -->
+    <div id="life-path-result"></div>
+
+    <!-- Grid para las cartas (3x3 por área) -->
+    <div class="grid" id="grid"></div>
+
+    <!-- Modal para detalles de las cartas -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Vincula el archivo JavaScript -->
+<script src="script.js"></script>
